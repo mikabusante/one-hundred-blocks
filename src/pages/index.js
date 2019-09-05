@@ -1,21 +1,36 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import styled from 'styled-components'
+import Global from '../utils/Global'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import SignUp from '../components/1-SignUp'
+import Checkout from '../components/2-Checkout'
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <Site>
+    <Global />
+    <Title>one hundred blocks</Title>
+    <Components>
+      {/* <Checkout /> */}
+      <SignUp />
+    </Components>
+  </Site>
 )
 
 export default IndexPage
+
+const Site = styled.div`
+  font-family: sans-serif;
+`
+
+const Title = styled.h1`
+  font-size: 4rem;
+  padding: 4rem 3vw;
+`
+
+const Components = styled.div`
+  display: grid;
+  grid-template-rows: repeat(5, 90vh);
+
+  div {
+  }
+`
